@@ -17,7 +17,7 @@
     <!-- Autopilot -->
     <group unless="$(arg use_mpc)">
       <node pkg="autopilot" type="autopilot" name="autopilot" output="screen">
-        <rosparam file="$(find state_predictor)/parameters/happymoon.yaml" />
+        <rosparam file="$(find state_predictor)/parameters/default.yaml" />
         <rosparam file="$(find position_controller)/parameters/happymoon.yaml" />
         <rosparam file="$(find autopilot)/parameters/happymoon.yaml" />
 
