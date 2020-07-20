@@ -28,8 +28,12 @@
         <param name="control_command_delay" value="0.0" />
 	      <param name="enable_command_feedthrough" value="$(arg enable_command_feedthrough)" />
 
-        <remap from="autopilot/state_estimate" to="state_estimate" />
+        <remap from="autopilot/state_estimate" to="/state_estimate" />
       </node>
+
+      <node name="rqt_quad_gui" pkg="rqt_gui" type="rqt_gui" 
+        args="-s rqt_quad_gui.basic_flight.BasicFlight --args 
+        --quad_name $(arg quad_name)" output="screen"/>
     </group>
     
     <group if="$(arg use_mpc)">
